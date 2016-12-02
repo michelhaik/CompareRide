@@ -1,6 +1,12 @@
 from tkinter import *
+class Interface:
+    def __init__(self):
+         
+        self.janela = Tk()
+        self.janela["bg"] = "black"
+        self.janela.title("CompareRide")
+        self.janela.geometry("400x1200+300+300")
 
-janela = Tk()
 def bt_click():
     print("bt_click")
     if (str(ed1.get()).isnumeric() and str(ed2.get()).isnumeric()):
@@ -11,20 +17,21 @@ def bt_click():
     else:
         lb1["text"] = "valores informados invalidos"
 
+def entrada(self):
+        
+    self.ed1 = Entry(self.janela)
+    self.ed1.place(x= 100, y = 100)
+    self.ed2= Entry(self.janela)
+    self.ed2.place(x=100,y=130)
 
-ed1 = Entry(janela)
-ed1.place(x= 100, y = 100)
-ed2= Entry(janela)
-ed2.place(x=100,y=130)
+    self.bt = Button(self.janela, width = 20, text = "Comparar", command=bt_click)
+    self.bt.place(x= 100, y = 150)
 
-bt = Button(janela, width = 20, text = "Comparar", command=bt_click)
-bt.place(x= 100, y = 150)
-
-lb1 = Label(janela, text = "Label1")
-lb1.place(x=100, y = 200)
+    self.lb1 = Label(self.janela, text = "Label1")
+    self.lb1.place(x=100, y = 200)
 
 
-janela.geometry("400x1200+300+300")
+
 janela.mainloop()
 
 
