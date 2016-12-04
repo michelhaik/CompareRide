@@ -4,6 +4,9 @@ Created on Thu Dec  1 16:29:53 2016
 
 @author: Michel
 """
+from datetime import datetime
+
+def Hora
 
 def calculadora(distancia, tempo, app):
     if app == "Uber":
@@ -42,3 +45,5 @@ distancia=5.6
 tempo=21
 app="Táxi com 30% de desconto"
 calculadora(distancia, tempo, app)
+now = datetime.now()
+print(now)
