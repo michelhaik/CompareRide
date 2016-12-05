@@ -17,26 +17,8 @@ dia_semana=dia_completo.weekday() # Pelo Python, Segunda é 0, Terça é 1, quar
 def calculadora(distancia, tempo, app):
     if app == "Uber":
         preco=(2+ tempo*0.26 + distancia*1.40 + distancia*0.1)*dinamica
-        
-    elif app == "Cabify":
-        # Os horários de pico são das 7 às 10 e das 17 as 21, de segunda a sexta-feira
-        if dia_semana>=0 and dia_semana<5:
-            if hora_oficial>=7 and hora_oficial<10  or hora_oficial>=17 and hora_oficial<21:
-        
-                if distancia<=10:
-                    preco=distancia*2.9 +3
-                elif distancia>10 and distancia<25:
-                    preco=distancia*1.85 +3
-                elif distancia>25:
-                    preco=distancia*3 +3
-        else:
-            if distancia<=10:
-                preco=distancia*2.9 +.5
-            elif distancia>10 and distancia<25:
-                preco=distancia*1.85 +0.5
-            elif distancia>25:
-                preco=distancia*3 +0.5
-        #print(preco)    
+ 
+            
             
             
             
@@ -64,9 +46,9 @@ def calculadora(distancia, tempo, app):
 
         
 
-    print(preco_taxi)        
 distancia=5.6
 tempo=21
-app="Táxi comum"
+app="Táxi comum"#Táxi com 30% de desconto"
 calculadora(distancia, tempo, app)
+print(preco_taxi)
 
