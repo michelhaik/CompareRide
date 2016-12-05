@@ -14,15 +14,6 @@ janela1["bg"] = "black"
 janela1.title("CompareRide")
 janela1.geometry("400x400+300+300")
 
-def bt_click():
-    if ed1.get().isnumeric() and ed2.get().isnumeric():
-        tempo = ed1.get()
-        distancia = ed2.get()
-        
-    else:
-        lb3["text"] = "Comandos invalidos"
-    
-                                   
 
 ed1 = Entry(janela1)
 ed1.place(x= 100, y = 100)
@@ -36,6 +27,20 @@ lb2 = Label(janela1, width = 10, text = "Distancia",fg="black",bg="gold")
 lb2.place(x = 0, y =130)
 lb3 = Label(janela1, width = 20,text = "Comparar",fg="black",bg="gold")
 lb3.place(x = 100, y =180)
+
+
+def bt_click():
+    if ed1.get().isnumeric() and ed2.get().isnumeric():
+        tempo = ed1.get()
+        distancia = ed2.get()
+        return(tempo,distancia)
+        
+        
+    else:
+        lb3["text"] = "Comandos invalidos"
+    
+bt_click()
+                                  
 bt = Button(janela1, width = 20, text = "Comparar", command=bt_click)
 bt.place(x= 100, y = 150)
 
