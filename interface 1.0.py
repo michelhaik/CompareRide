@@ -30,7 +30,7 @@ lb3.place(x = 100, y =180)
 
 
 def bt_click():
-    if ed1.get().isnumeric() and ed2.get().isnumeric():
+    if float(ed1.get().isnumeric()) and float(ed2.get().isnumeric()):
         tempo = ed1.get()
         distancia = ed2.get()
         return(tempo,distancia)
@@ -39,7 +39,8 @@ def bt_click():
     else:
         lb3["text"] = "Comandos invalidos"
     
-bt_click()
+tempo = ed1.get()
+distancia = ed2.get()
                                   
 bt = Button(janela1, width = 20, text = "Comparar", command=bt_click)
 bt.place(x= 100, y = 150)
