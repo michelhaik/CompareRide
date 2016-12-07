@@ -18,33 +18,34 @@ print(hora_oficial)
 ###################################
 #regras cabify
 # Os horários de pico são das 7 às 10 e das 17 as 21, de segunda a sexta-feira
-if dia_semana>=0 and dia_semana<5:
+if dia_semana>=0 and dia_semana<5: #true
     if hora_oficial>=7 and hora_oficial<10  or hora_oficial>=17 and hora_oficial<21:
         
         if distancia<=10:
-            preco=distancia*2.9 +3
+            preco_cabify=distancia*2.9 +3
         elif distancia>10 and distancia<25:
-            preco=distancia*1.85 +3
+            preco_cabify=(distancia-10)*1.85 + 32
         elif distancia>25:
-            preco=distancia*3 +3
+            preco_cabify=(distancia-25)*3 +59.75
+    else:
+        if distancia<=10:
+            preco_cabify=distancia*2.9 +.5
+        elif distancia>10 and distancia<25:
+            preco_cabify=(distancia-10)*1.85 +29.5
+        elif distancia>25:
+            preco_cabify=(distancia-25)*3 +57.25
+    
+        
 else:
     if distancia<=10:
-            preco=distancia*2.9 +.5
+            preco_cabify=distancia*2.9 +.5
     elif distancia>10 and distancia<25:
-            preco=distancia*1.85 +0.5
+            preco_cabify=(distancia-10)*1.85 +29.5
     elif distancia>25:
-            preco=distancia*3 +0.5
+            preco_cabify=(distancia-25)*3 +57.25
+    
             
-print(preco)
 ########################################
 #regras taxi bandeira 2
 
-tempo=10
-distancia=4
-if dia_semana==6 or (hora_oficial>=0 and hora_oficial<6) or (hora_oficial>=20):
-    preco=4.5+ 0.55*tempo + 3.58*distancia
-   
-else:
-    preco=4.5 + 0.55*tempo + 2.75*distancia
-    
 print(preco)
